@@ -1,0 +1,103 @@
+Color Mixture Site
+
+https://colorhunt.co/
+https://www.csfieldguide.org.nz/en/interactives/centered/rgb-mixer/?hex=true&hide-selector=true
+
+
+items alignment properties must use with display: flex;
+
+Flexbox Properties:
+Once an element is a flex container, you can control the layout of its child elements using various properties:
+
+flex-direction: Defines the direction of the flex items (row, row-reverse, column, column-reverse).
+
+justify-content: Controls horizontal alignment (flex-start, flex-end, center, space-between, space-around, space-evenly).
+
+align-items: Controls vertical alignment (flex-start, flex-end, center, baseline, stretch).
+
+flex-wrap: Determines whether items wrap (nowrap, wrap, wrap-reverse).
+
+align-content: Controls alignment of multiple rows (flex-start, flex-end, center, space-between, space-around, stretch).
+
+flex: Defines how a flex item grows and shrinks (flex-grow, flex-shrink, flex-basis).
+
+
+// ========================= flex basis in css =====================
+
+
+display: flex
+The element becomes a block-level flex container.
+
+It takes up the full width of its parent container (like a div by default).
+
+The element behaves like a block in the document flow.
+
+
+
+display: inline-flex
+The element becomes an inline-level flex container.
+
+It only takes up as much width as its content requires.
+
+
+The flex-basis property defines the initial size of a flex item before space is distributed according to flex-grow and flex-shrink.
+
+.flex-item {
+  flex-basis: 200px;
+}
+
+
+when flex direction is row the flex basis will grow in left to right and when it column flex basis will grow by top to bottom.    
+
+
+
+// ======================= grid =============================== //
+
+In CSS, the order property is used with Flexbox and Grid layouts to control the visual order of items, without changing their source order in the HTML.
+
+order does not work outside of Flexbox or Grid containers.
+
+It only affects the visual rendering, not the DOM order (important for screen readers or tab order).  
+
+
+The default value is 0.
+
+You can use positive, negative, or zero integers.
+
+Items with lower order values appear first.
+
+🔸 Example (Flexbox)
+html
+Copy
+Edit
+<div class="container">
+  <div class="item" style="order: 2">Item 1</div>
+  <div class="item" style="order: 1">Item 2</div>
+  <div class="item" style="order: 3">Item 3</div>
+</div>
+css
+Copy
+Edit
+.container {
+  display: flex;
+}
+🔹 Rendered order will be:
+👉 Item 2 → Item 1 → Item 3
+(because Item 2 has the lowest order value)
+
+
+
+
+
+
+// ===== In CSS Grid, the grid-area property is used to assign a name to a grid item, or to position it within the grid using line numbers.
+
+grid-area: row-start / column-start / row-end / column-end;
+
+🔹 Example:
+css
+Copy
+Edit
+.item {
+  grid-area: 1 / 2 / 3 / 4;
+}
